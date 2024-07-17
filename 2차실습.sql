@@ -50,3 +50,26 @@ select count(distinct custid) from orders;
 select distinct saleprice from orders;
 
 select if(100>200, '참이다', '거짓이다');
+
+select price*0.5  as '반값할인' from book;
+
+-- 고객이 주문한 도서의 총 판매액, 평균값, 최저가, 최고가를 구하시오
+select sum(saleprice) as total,
+		avg(saleprice) as average,
+        min(saleprice) as minimum,
+        max(saleprice) as maximum
+from orders;
+
+select rtrim('  안녕하세요  ');
+
+select length('안녕');
+select char_length('안녕');
+
+select concat('홍길동','모험');
+select concat_ws(',','홍길동','모험');
+
+select now();
+
+select date_add("2021-03-07 23:59:59",INTERVAL -10 DAY);
+
+SELECT orderdate, DATE_ADD(orderdate, INTERVAL -1 MONTH) FROM orders;
